@@ -12,13 +12,11 @@ namespace Whatsapp_Api_Cloud
 {
     public partial class _Default : Page
     {
-        string token_authorization = "EAAFwOq3r3e0BANvD8UX0F3EBZBz4VFQB8q2lAKSXvANgOVsQjlztaRfMum9nr0OdeBcQSXkNFy4hHYZBsDpQyQ0vzgGENwvWZBZAS7TnHMfoWzZBk7bEMhuHVcPeWGACzVmGZB2fPFEpxJyUSdFx6UlA7y6RnXsrvZBnRl7GyZBIUNSZCKsATKRNv";
+        string token_authorization = "EAAFwOq3r3e0BACtXrd2w654IHX8lPl7mg2ZApt9mWnhQuBygHBCVJTpewqZBNo7iJL3H2tfsft7whKjdIPB6ZAwX3JCY5z1gvepdk79lcWQzQQUJyFnetXfCA1vp15cQ2JBcjFZAZChq0Bffe2ZB9z6CbHjvhpjPWWeFLa5HldeDPlVaHoX1W5";
         string num_whatsapp_business = "111640231639673";
         protected void Page_Load(object sender, EventArgs e)
         {
-            string filePath = @"C:\Users\cnarea\Pictures\procesos.jpeg";
-            whatsapp_image_upload_path(filePath);
-            send_whatsapp_imagen_id("593985517569", "1097244920952078");
+          
         }
 
         public void send_whatsapp_hello_world(string numero)
@@ -645,5 +643,12 @@ namespace Whatsapp_Api_Cloud
             return retorno;
         }
 
+        protected void btn_enviar_mensaje_Click(object sender, EventArgs e)
+        {
+            //string filePath = @"C:\Users\cnarea\Pictures\procesos.jpeg";
+            //whatsapp_image_upload_path(filePath);
+            //send_whatsapp_imagen_id("593985517569", "1097244920952078");
+            send_whatsapp_template_texto_header("593985517569", txt_cabecera_mensaje.Text, txt_cuerpo_mensaje.Text);
+        }
     }
 }
